@@ -189,9 +189,10 @@ if (is.null(found_input)) { # If I didn't find any file...
 
   sink('correlations.txt') # I start writing output to a file called correlations.txt.
   cat('Correlation Results\n') # I print a header for clarity.
-  cat('\nPearson correlation tests for a straight-line (linear) relationship between group number and blood pressure.\n') # I explain Pearson.
+  cat('\nPearson correlation measures the strength and direction of the linear relationship between group number and blood pressure.\n') # I explain Pearson in plain language.
+  pear_res$method <- 'Pearson correlation' # I change the label for the output.
   print(pear_res) # I print the Pearson correlation results.
-  cat('\nSpearman correlation checks if blood pressure tends to rise or fall as group number increases, even if not in a straight line.\n') # I explain Spearman.
+  cat('\nSpearman correlation measures whether blood pressure tends to increase or decrease as group number goes up, even if the relationship is not perfectly straight.\n') # I explain Spearman in plain language.
   print(spear_res) # I print the Spearman correlation results.
   sink() # I stop writing to the file.
 
@@ -265,7 +266,6 @@ if (is.null(found_input)) { # If I didn't find any file...
   for (ln in narrative) cat(ln, '\n') # I print each line of my interpretation.
   sink() # I stop writing to the file.
 
-
 ## -----------------------------------------------------------------------------
 ## Section 4 — Simple Linear Regression: group_code vs value
 ## -----------------------------------------------------------------------------
@@ -311,4 +311,5 @@ p_lm <- ggplot(anova_df, aes(x = group_code, y = value, color = group)) + # I cr
   theme_minimal() # I use a simple plot theme.
 
 ggsave('linear_regression_plot.pdf', plot = p_lm, width = 7, height = 5) # I save the regression plot as a PDF.
+} # Close main else block
 
