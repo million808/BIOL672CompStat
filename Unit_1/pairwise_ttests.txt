@@ -1,0 +1,4 @@
+Pairwise t-tests (raw p-values, Bonferroni, BH)
+Drug B vs Drug A: raw p = 0.000000, bonf = 0.000000, BH = 0.000000
+Drug C vs Drug A: raw p = 0.000064, bonf = 0.000191, BH = 0.000095
+Drug C vs Drug B: raw p = 0.046011, bonf = 0.138034, BH = 0.046011

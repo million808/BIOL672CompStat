@@ -1,0 +1,10 @@
+Kolmogorov-Smirnov Normality Test Results (per group)
+Drug A: statistic=0.10286, p=0.908749
+  Interpretation: no evidence against normality for this group (p >= 0.05)
+Drug B: statistic=0.10493, p=0.895902
+  Interpretation: no evidence against normality for this group (p >= 0.05)
+Drug C: statistic=0.10397, p=0.901971
+  Interpretation: no evidence against normality for this group (p >= 0.05)
+
+Note: Because I am using the mean and SD from the same data, these p-values are only approximate.
+Also, if there are repeated values (ties), the test is less reliable.

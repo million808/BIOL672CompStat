@@ -1,0 +1,10 @@
+One-way ANOVA (oneway.test) results
+
+	One-way analysis of means (not assuming equal variances)
+
+data:  value and group
+F = 22.68, num df = 2.000, denom df = 56.765, p-value = 5.767e-08
+
+
+Interpretation:
+There is a statistically significant difference among groups (p < 0.05).

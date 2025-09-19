@@ -1,0 +1,27 @@
+Correlation Results
+
+Pearson correlation tests for a straight-line (linear) relationship between group number and blood pressure.
+
+	Pearson's product-moment correlation
+
+data:  anova_df$group_code and anova_df$value
+t = 3.6109, df = 88, p-value = 0.0005068
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.1643656 0.5271070
+sample estimates:
+      cor 
+0.3592291 
+
+
+Spearman correlation checks if blood pressure tends to rise or fall as group number increases, even if not in a straight line.
+
+	Spearman's rank correlation rho
+
+data:  anova_df$group_code and anova_df$value
+S = 76613, p-value = 0.0003401
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.3693654 
+
