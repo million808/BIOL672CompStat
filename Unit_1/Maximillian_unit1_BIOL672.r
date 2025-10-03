@@ -1,17 +1,18 @@
-# MaximillianBalter_unit1_BIOL672.r
+# MaximillianBalter_Unit1_BIOL672.r
 # Author: Maximillian Balter
 # OS: macOS
-# Libraries/packages used: ggplot2, jsonlite, dplyr, stats
-# Data files used: random_numbers.txt, desc.txt, histo.pdf, Dataset.datatab, anova_results.txt, pairwise_ttests.txt, kruskal_results.txt, ks_tests.txt, correlations.txt, correlation_scatterplots.pdf, linear_regression_results.txt, linear_regression_plot.pdf, assumptions_and_consistency.txt
-# This script is divided into four main sections:
+# Libraries/packages used: ggplot2, jsonlite, dplyr
+# Input data files used: Dataset.datatab (JSON format ANOVA data)
+# Output files generated: desc.txt, histo.pdf, anova_results.txt, anova_plot.pdf, pairwise_ttests.txt, kruskal_results.txt, ks_tests.txt, correlations.txt, correlation_scatterplots.pdf, linear_regression_results.txt, linear_regression_plot.pdf, assumptions_and_consistency.txt
+# This script is divided into four main sections (Steps 2-6 from the assignment sheet):
 #   1. Random Number Generator
 #   2. One-way ANOVA
 #   3. Nonparametric and Correlation Analyses
 #   4. Simple Linear Regression
 
-## -----------------------------------------------------------------------------
+
 ## Section 1 — Random number generator and simple descriptive output
-## -----------------------------------------------------------------------------
+
 # Here I am checking if ggplot2 is installed. If not, I install it so I can make plots.
 if (!require(ggplot2)) { # I check if ggplot2 is available.
   install.packages('ggplot2') # I download and install ggplot2 from CRAN if needed.
@@ -40,9 +41,7 @@ sink() # I stop writing to the file.
 
 write.table(data, file = 'random_numbers.txt', row.names = FALSE, col.names = FALSE) # I save the raw random numbers to a file called random_numbers.txt.
 
-## -----------------------------------------------------------------------------
 ## Section 2 — ANOVA input parsing and parametric analysis
-## -----------------------------------------------------------------------------
 anova_candidates <- c('Dataset.datatab', 'anova_data.txt', './Unit_1/Dataset.datatab', '/Users/Maximillian/BIO672_COMPSTAT/Unit_1/Dataset.datatab') # I make a list of possible file paths for my ANOVA input data.
 found_input <- NULL # I start with no file found.
 for (p in anova_candidates) { # I loop through each possible file path.
@@ -138,9 +137,7 @@ if (is.null(found_input)) { # If I didn't find any file...
   }
   sink() # I stop writing to the file.
 
-  ## -----------------------------------------------------------------------------
   ## Section 3 — Nonparametric tests, normality checks, and correlations
-  ## -----------------------------------------------------------------------------
   kw <- kruskal.test(value ~ group, data = anova_df) # I run the Kruskal-Wallis test to check if the median blood pressure differs between groups.
 
   sink('kruskal_results.txt') # I start writing output to a file called kruskal_results.txt.
@@ -200,7 +197,7 @@ if (is.null(found_input)) { # If I didn't find any file...
     geom_jitter(width = 0.2, height = 0, size = 2) + # I add jitter so points don't overlap.
     geom_smooth(method = 'lm', se = TRUE) + # I add a line to show the trend.
     labs(title = 'Blood Pressure by Group (Scatterplot)', x = 'Group (coded as number)', y = 'Blood Pressure (mm Hg)') + # I add a title and axis labels.
-    theme_minimal() # I use a simple plot theme.
+    theme_minimal() # I am using a simple plot theme because that is all I know how to do.
 
   ggsave('correlation_scatterplots.pdf', plot = p_corr, width = 7, height = 5) # I save the plot as a PDF.
 
@@ -244,9 +241,9 @@ if (is.null(found_input)) { # If I didn't find any file...
   narrative <- c(narrative, '') # Blank line.
   narrative <- c(narrative, 'Interpretation:') # Interpretation header.
   if (param_sig && nonparam_sig) { # If both tests are significant...
-    narrative <- c(narrative, "Both tests found differences between groups; since they agree, I am more confident the difference is real.") # I add my interpretation.
+    narrative <- c(narrative, "Both tests found differences between groups, and since they agree, I am more confident the difference is real.") # I add my interpretation.
   } else if (!param_sig && !nonparam_sig) { # If neither test is significant...
-    narrative <- c(narrative, "Neither test found differences between groups; I see no evidence of group effects.") # I add my interpretation.
+    narrative <- c(narrative, "Neither test found differences between groups, so I see no evidence of group effects.") # I add my interpretation.
   } else if (param_sig && !nonparam_sig) { # If only ANOVA is significant...
     narrative <- c(narrative, "ANOVA shows a difference but Kruskal-Wallis does not. I would check normality and variances and look at the raw data; ANOVA can be sensitive to mean shifts while Kruskal-Wallis focuses on ranks.") # I add my interpretation.
   } else { # If only Kruskal-Wallis is significant...
@@ -266,9 +263,7 @@ if (is.null(found_input)) { # If I didn't find any file...
   for (ln in narrative) cat(ln, '\n') # I print each line of my interpretation.
   sink() # I stop writing to the file.
 
-## -----------------------------------------------------------------------------
 ## Section 4 — Simple Linear Regression: group_code vs value
-## -----------------------------------------------------------------------------
 # Here I am running a simple linear regression to see how blood pressure changes as group number increases.
 # I use lm() to fit a straight line: value = intercept + slope * group_code.
 lm_fit <- lm(value ~ group_code, data = anova_df) # I fit the model using lm().

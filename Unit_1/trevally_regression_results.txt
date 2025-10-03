@@ -1,0 +1,59 @@
+Multiple Regression Analysis Results
+Giant Trevally (Caranx ignobilis) Intestinal Villi Morphology
+
+Analysis 1: Multiple Regression Across All Treatment Groups
+Dependent Variable: Morphological Index
+Predictor Variables: Average Length, Average Width, Length SD, Width SD
+
+
+Call:
+lm(formula = Morphological_Index ~ Avg_Length_Villi + Avg_Width_Villi + 
+    Length_SD + Width_SD, data = trevally_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.89389 -0.00587  0.03089  0.08125  0.22767 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.212653   0.462414  -2.622   0.0113 *  
+Avg_Length_Villi  1.003295   0.004058 247.223   <2e-16 ***
+Avg_Width_Villi   1.025534   0.010503  97.643   <2e-16 ***
+Length_SD         0.020751   0.026218   0.791   0.4321    
+Width_SD         -0.096469   0.080018  -1.206   0.2331    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2142 on 55 degrees of freedom
+Multiple R-squared:  0.9997,	Adjusted R-squared:  0.9997 
+F-statistic: 5.053e+04 on 4 and 55 DF,  p-value: < 2.2e-16
+
+
+Analysis 2: Multiple Regression Within Treatment Group A1
+Same variables but analyzed only within one treatment group
+
+
+Call:
+lm(formula = Morphological_Index ~ Avg_Length_Villi + Avg_Width_Villi + 
+    Length_SD + Width_SD, data = single_treatment_data)
+
+Residuals:
+ALL 3 residuals are 0: no residual degrees of freedom!
+
+Coefficients: (2 not defined because of singularities)
+                   Estimate Std. Error t value Pr(>|t|)
+(Intercept)       1.274e+02        NaN     NaN      NaN
+Avg_Length_Villi         NA         NA      NA       NA
+Avg_Width_Villi          NA         NA      NA       NA
+Length_SD         2.530e-13        NaN     NaN      NaN
+Width_SD         -5.196e-13        NaN     NaN      NaN
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:    NaN,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 2 and 0 DF,  p-value: NA
+
+
+Interpretation and Biological Meaning:
+Multiple regression allows me to see which morphological measurements are the best predictors of overall size (Morphological Index).
+By comparing overall vs. within-group models, I can understand whether treatment effects modify the relationships between variables.
+Within-group analysis could not be completed due to insufficient variation within treatment groups.

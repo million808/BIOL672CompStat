@@ -1,0 +1,16 @@
+Multivariate Analysis of Variance (MANOVA) Results
+Giant Trevally (Caranx ignobilis) Intestinal Villi Morphology Analysis
+
+Variables tested simultaneously in the multivariate analysis:
+- Average Length of Villi (micrometers): Mean length measurements across multiple villi per fish
+- Average Width of Villi (micrometers): Mean width measurements across multiple villi per fish
+- Length Standard Deviation: Measure of variability in villi length within each fish
+- Width Standard Deviation: Measure of variability in villi width within each fish
+MANOVA could not be computed due to rank deficiency in the data.
+This occurs when treatment groups have identical values, creating perfect correlations.
+
+Detailed Interpretation:
+MANOVA (Multivariate Analysis of Variance) tests whether my treatment groups create different "profiles" when I consider morphological measurements together as a package.
+This is much more appropriate than running separate ANOVAs because my variables are correlated - if a fish has long villi, it probably also has wide villi.
+MANOVA accounts for these correlations and also controls for the problem of multiple testing, which would increase my chance of false positives if I did separate tests.
+MANOVA could not be performed due to data structure limitations, but individual ANOVA results show strong evidence for treatment effects on each morphological variable.

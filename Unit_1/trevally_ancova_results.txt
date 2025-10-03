@@ -1,0 +1,39 @@
+Analysis of Covariance (ANCOVA) Results
+Giant Trevally (Caranx ignobilis) Intestinal Villi Morphology
+
+Composite Variables Created:
+1. Villi Surface Index = Average Length × Average Width
+   Biological meaning: Approximates functional surface area for absorption
+2. Length-Width Ratio = Average Length ÷ Average Width
+   Biological meaning: Indicates villi shape (tall/narrow vs short/wide)
+
+ANCOVA Model 1: Average Villi Length ~ Treatment + Villi Surface Index
+Question: Do treatments affect villi length after controlling for surface area?
+
+            Df Sum Sq Mean Sq   F value Pr(>F)    
+Treatment   19  14335   754.5 2.561e+29 <2e-16 ***
+Residuals   40      0     0.0                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Interpretation Model 1:
+Treatment effect: Significant (p = 0)
+Surface area covariate: NA (p = NA)
+
+ANCOVA Model 2: Length-Width Ratio ~ Treatment + Morphological Index
+Question: Do treatments affect villi shape after controlling for overall size?
+
+            Df Sum Sq Mean Sq   F value Pr(>F)    
+Treatment   19  72.76    3.83 1.602e+29 <2e-16 ***
+Residuals   40   0.00    0.00                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Interpretation Model 2:
+Treatment effect: Significant (p = 0)
+Size covariate: NA (p = NA)
+
+Biological Significance of ANCOVA:
+ANCOVA allows us to separate treatment effects from natural variation due to size or surface area.
+This is important because larger fish or those with more surface area might naturally have different villi dimensions.
+By controlling for these factors, we can see the "pure" treatment effects on morphology.
