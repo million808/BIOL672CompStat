@@ -1,0 +1,22 @@
+Assumptions and consistency summary
+ANOVA p = 5.76703e-08
+Kruskal-Wallis p = 8.50605e-07
+
+Normality notes:
+Drug A: no evidence against normality (KS p >= 0.05) 
+Drug B: no evidence against normality (KS p >= 0.05) 
+Drug C: no evidence against normality (KS p >= 0.05) 
+
+Consistency:  Parametric and nonparametric tests agree on significance. 
+
+Interpretation:
+Parametric ANOVA p = 5.76703e-08; Kruskal-Wallis p = 8.50605e-07 
+Parametric and nonparametric tests agree on significance. 
+Normality notes: 
+Drug A: no evidence against normality (KS p >= 0.05) 
+Drug B: no evidence against normality (KS p >= 0.05) 
+Drug C: no evidence against normality (KS p >= 0.05) 
+KS caveat: KS p-values are approximate because group mean/sd were estimated; ties may affect validity. 
+ 
+Interpretation: 
+Both tests found differences between groups, and since they agree, I am more confident the difference is real. 

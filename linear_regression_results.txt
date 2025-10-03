@@ -1,0 +1,23 @@
+Simple Linear Regression: Blood Pressure vs Group (numeric code)
+
+Call:
+lm(formula = value ~ group_code, data = anova_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.3000 -2.5667  0.0667  2.5667  8.5667 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  132.700      1.117 118.827  < 2e-16 ***
+group_code     1.867      0.517   3.611 0.000507 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.004 on 88 degrees of freedom
+Multiple R-squared:  0.129,	Adjusted R-squared:  0.1191 
+F-statistic: 13.04 on 1 and 88 DF,  p-value: 0.0005068
+
+
+Interpretation: I am checking if blood pressure tends to increase or decrease as group number goes up.
+The slope is statistically significant (p < 0.05), so blood pressure changes with group number.

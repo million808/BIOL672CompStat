@@ -19,8 +19,6 @@ if (!require(ggplot2)) { # I check if ggplot2 is available.
   library(ggplot2) # I load ggplot2 so I can use its plotting functions.
 }
 
-set.seed(12345) # I set a random seed so my random numbers are the same every time I run the script.
-
 data <- rnorm(5000, mean = 0, sd = 1) # I use rnorm() to generate 5000 random numbers from a normal distribution with mean 0 and sd 1.
 
 mean_val <- mean(data) # I calculate the mean of my random numbers using mean().

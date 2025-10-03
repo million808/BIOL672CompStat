@@ -1,0 +1,9 @@
+Kruskal-Wallis Test Results
+
+	Kruskal-Wallis rank sum test
+
+data:  value by group
+Kruskal-Wallis chi-squared = 27.955, df = 2, p-value = 8.506e-07
+
+
+Interpretation: I am checking if the groups differ in their typical (median) blood pressure. A small p-value means at least one group is different.
