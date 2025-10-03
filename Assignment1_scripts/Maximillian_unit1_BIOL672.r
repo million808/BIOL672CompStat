@@ -32,17 +32,17 @@ p_hist <- ggplot(data.frame(x = data), aes(x = x)) + # I create a ggplot object 
   labs(title = 'Histogram of generated data with density line', x = 'Value', y = 'Density') + # I add a title and axis labels.
   theme_minimal() # I use a clean, minimal theme for the plot.
 
-ggsave(filename = 'histo.pdf', plot = p_hist, width = 7, height = 5) # I save the plot to a PDF file called histo.pdf using ggsave().
+ggsave(filename = 'Assignment1_output/plots/histo.pdf', plot = p_hist, width = 7, height = 5) # I save the plot to a PDF file called histo.pdf using ggsave().
 
-sink('desc.txt') # I start writing output to a file called desc.txt.
+sink('Assignment1_output/results/desc.txt') # I start writing output to a file called desc.txt.
 cat('Sample Mean:', mean_val, '\n') # I print the mean value to the file.
 cat('Sample SD:', sd_val, '\n') # I print the standard deviation to the file.
 sink() # I stop writing to the file.
 
-write.table(data, file = 'random_numbers.txt', row.names = FALSE, col.names = FALSE) # I save the raw random numbers to a file called random_numbers.txt.
+write.table(data, file = 'Assignment1_output/results/random_numbers.txt', row.names = FALSE, col.names = FALSE) # I save the raw random numbers to a file called random_numbers.txt.
 
 ## Section 2 — ANOVA input parsing and parametric analysis
-anova_candidates <- c('Dataset.datatab', 'anova_data.txt', './Unit_1/Dataset.datatab', '/Users/Maximillian/BIO672_COMPSTAT/Unit_1/Dataset.datatab') # I make a list of possible file paths for my ANOVA input data.
+anova_candidates <- c('Assignment1_data/Dataset.datatab', 'Dataset.datatab', './Assignment1_data/Dataset.datatab', '/Users/Maximillian/BIO672_COMPSTAT/Assignment1_data/Dataset.datatab') # I make a list of possible file paths for my ANOVA input data.
 found_input <- NULL # I start with no file found.
 for (p in anova_candidates) { # I loop through each possible file path.
   if (file.exists(p)) { found_input <- p; break } # If the file exists, I use it and stop looking.
@@ -119,7 +119,7 @@ if (is.null(found_input)) { # If I didn't find any file...
     labs(title = 'Mean Blood Pressure by Drug (with SE)', x = 'Drug Group', y = 'Mean Blood Pressure (mm Hg)') + # I add a title and axis labels.
     theme_minimal() # I use a clean, minimal theme for the plot.
 
-  ggsave(filename = 'anova_plot.pdf', plot = p_anova, width = 7, height = 5) # I save the plot to a PDF file called anova_plot.pdf.
+  ggsave(filename = 'Assignment1_output/plots/anova_plot.pdf', plot = p_anova, width = 7, height = 5) # I save the plot to a PDF file called anova_plot.pdf.
 
   pairwise_raw <- pairwise.t.test(anova_df$value, anova_df$group, p.adjust.method = 'none', pool.sd = FALSE) # I run pairwise t-tests between groups.
   pmat <- pairwise_raw$p.value # I get the matrix of p-values.
@@ -199,7 +199,7 @@ if (is.null(found_input)) { # If I didn't find any file...
     labs(title = 'Blood Pressure by Group (Scatterplot)', x = 'Group (coded as number)', y = 'Blood Pressure (mm Hg)') + # I add a title and axis labels.
     theme_minimal() # I am using a simple plot theme because that is all I know how to do.
 
-  ggsave('correlation_scatterplots.pdf', plot = p_corr, width = 7, height = 5) # I save the plot as a PDF.
+  ggsave('Assignment1_output/plots/correlation_scatterplots.pdf', plot = p_corr, width = 7, height = 5) # I save the plot as a PDF.
 
   cat('\n--- Interpretation of Nonparametric and Correlation Analyses ---\n') # I print a header for my interpretation.
   cat('I checked if the blood pressure data in each group looked normal using the KS test. The results are only a rough guide because of repeated values and using the sample mean/SD.\n') # I explain the KS test results.
@@ -305,6 +305,6 @@ p_lm <- ggplot(anova_df, aes(x = group_code, y = value, color = group)) + # I cr
   labs(title = 'Linear Regression: Blood Pressure vs Group (numeric code)', x = 'Group (coded as number)', y = 'Blood Pressure (mm Hg)') + # I add a title and axis labels.
   theme_minimal() # I use a simple plot theme.
 
-ggsave('linear_regression_plot.pdf', plot = p_lm, width = 7, height = 5) # I save the regression plot as a PDF.
+ggsave('Assignment1_output/plots/linear_regression_plot.pdf', plot = p_lm, width = 7, height = 5) # I save the regression plot as a PDF.
 } # Close main else block
 

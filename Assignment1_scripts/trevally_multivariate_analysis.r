@@ -52,7 +52,7 @@ if (!require(corrplot)) { # I check if corrplot is available.
 }
 
 # I read the Giant Trevally morphology data using read.table as specified in the assignment.
-trevally_data <- read.table("trevally_multivariate_data.txt", # I specify the filename of my data file.
+trevally_data <- read.table("Assignment1_data/trevally_multivariate_data.txt", # I specify the filename of my data file.
                            header = TRUE, # I tell R that the first row contains column names.
                            sep = "\t", # I specify that columns are separated by tabs.
                            stringsAsFactors = TRUE) # I convert character columns to factors automatically.
@@ -80,7 +80,7 @@ correlation_matrix <- cor(quant_data) # I calculate the correlation matrix using
 print(correlation_matrix) # I print the correlation matrix to see the correlation coefficients.
 
 # I create a visual correlation plot and save it as a PDF file.
-pdf("trevally_correlation_plot.pdf", width = 8, height = 8) # I open a PDF device with specified dimensions.
+pdf("Assignment1_output/plots/trevally_correlation_plot.pdf", width = 8, height = 8) # I open a PDF device with specified dimensions.
 corrplot(correlation_matrix, method = "color", type = "upper", # I create a correlation plot using colors in the upper triangle.
          order = "hclust", tl.cex = 0.8, tl.col = "black") # I cluster similar correlations together and set text properties.
 dev.off() # I close the PDF device to save the file.
@@ -107,10 +107,10 @@ p3 <- create_scatter(trevally_data, "Avg_Width_Villi", "Length_SD") # I plot ave
 p4 <- create_scatter(trevally_data, "Width_SD", "Morphological_Index") # I plot width standard deviation vs morphological index.
 
 # I save each individual plot as a PDF file using ggsave().
-ggsave("trevally_length_vs_width.pdf", p1, width = 7, height = 5) # I save the length vs width plot.
-ggsave("trevally_length_vs_morphindex.pdf", p2, width = 7, height = 5) # I save the length vs morphological index plot.
-ggsave("trevally_width_vs_lengthsd.pdf", p3, width = 7, height = 5) # I save the width vs length SD plot.
-ggsave("trevally_widthsd_vs_morphindex.pdf", p4, width = 7, height = 5) # I save the width SD vs morphological index plot.
+ggsave("Assignment1_output/plots/trevally_length_vs_width.pdf", p1, width = 7, height = 5) # I save the length vs width plot.
+ggsave("Assignment1_output/plots/trevally_length_vs_morphindex.pdf", p2, width = 7, height = 5) # I save the length vs morphological index plot.
+ggsave("Assignment1_output/plots/trevally_width_vs_lengthsd.pdf", p3, width = 7, height = 5) # I save the width vs length SD plot.
+ggsave("Assignment1_output/plots/trevally_widthsd_vs_morphindex.pdf", p4, width = 7, height = 5) # I save the width SD vs morphological index plot.
 
 ## Section 4 — Box plots for comparing treatments
 
@@ -140,7 +140,7 @@ box_plot <- ggplot(long_data, aes(x = Treatment, y = Value, fill = Treatment)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1), # I rotate x-axis labels for better readability.
         legend.position = "none") # I remove the legend since colors match x-axis labels.
 
-ggsave("trevally_boxplots_by_treatment.pdf", box_plot, width = 12, height = 8) # I save the box plot as a PDF file.
+ggsave("Assignment1_output/plots/trevally_boxplots_by_treatment.pdf", box_plot, width = 12, height = 8) # I save the box plot as a PDF file.
 
 ## Section 5 — ANOVA analysis for each quantitative variable
 
@@ -223,7 +223,7 @@ if (!is.na(manova_pvalue)) { # If I was able to calculate the MANOVA p-value...
 }
 
 # I want to save all my MANOVA results and interpretation to a file so I can refer back to them later and include them in any reports I write.
-sink('trevally_manova_results.txt') # I'm opening a text file for writing and redirecting all my output to go there instead of the console.
+sink('Assignment1_output/results/trevally_manova_results.txt') # I'm opening a text file for writing and redirecting all my output to go there instead of the console.
 cat('Multivariate Analysis of Variance (MANOVA) Results\n') # I'm writing a clear header at the top of my output file.
 cat('Giant Trevally (Caranx ignobilis) Intestinal Villi Morphology Analysis\n\n') # I'm adding a descriptive title that includes the species name so anyone reading this knows exactly what study this is from.
 cat('Variables tested simultaneously in the multivariate analysis:\n') # I'm creating a section that clearly lists what I measured.
@@ -279,7 +279,7 @@ pca_plot <- ggplot(pca_data, aes(x = PC1, y = PC2, color = Treatment)) + # I set
   theme_minimal() + # I use a clean, minimal theme.
   theme(legend.position = "right") # I position the legend on the right side.
 
-ggsave("trevally_pca_biplot.pdf", pca_plot, width = 10, height = 7) # I save the PCA plot as a PDF file.
+ggsave("Assignment1_output/plots/trevally_pca_biplot.pdf", pca_plot, width = 10, height = 7) # I save the PCA plot as a PDF file.
 
 # I print the loadings showing how much each original variable contributes to each PC.
 cat("\nPCA Loadings (Variable contributions to each PC):\n") # I print a header for the loadings.
@@ -361,7 +361,7 @@ if (!is.na(r_squared_all) && !is.na(r_squared_single)) { # If both R-squared val
 }
 
 # I'm saving all my regression results to a file for future reference.
-sink('trevally_regression_results.txt') # I'm opening a file to save my regression analysis.
+sink('Assignment1_output/results/trevally_regression_results.txt') # I'm opening a file to save my regression analysis.
 cat('Multiple Regression Analysis Results\n') # I'm creating a header for the file.
 cat('Giant Trevally (Caranx ignobilis) Intestinal Villi Morphology\n\n') # I'm adding the study context.
 
@@ -470,7 +470,7 @@ ancova_plot1 <- ggplot(trevally_data, aes(x = Villi_Surface_Index, y = Avg_Lengt
   theme_minimal() + # I'm using a clean theme.
   theme(legend.position = "right") # I'm positioning the legend on the right.
 
-ggsave("trevally_ancova_length_surface.pdf", ancova_plot1, width = 10, height = 6) # I'm saving the first ANCOVA plot.
+ggsave("Assignment1_output/plots/trevally_ancova_length_surface.pdf", ancova_plot1, width = 10, height = 6) # I'm saving the first ANCOVA plot.
 
 # Second plot: Length-Width Ratio vs Morphological Index, colored by Treatment
 ancova_plot2 <- ggplot(trevally_data, aes(x = Morphological_Index, y = Length_Width_Ratio, color = Treatment)) + # I'm setting up a plot with morphological index on x-axis and length-width ratio on y-axis.
@@ -481,10 +481,10 @@ ancova_plot2 <- ggplot(trevally_data, aes(x = Morphological_Index, y = Length_Wi
   theme_minimal() + # I'm using a minimal theme.
   theme(legend.position = "right") # I'm putting the legend on the right.
 
-ggsave("trevally_ancova_ratio_morphindex.pdf", ancova_plot2, width = 10, height = 6) # I'm saving the second ANCOVA plot.
+ggsave("Assignment1_output/plots/trevally_ancova_ratio_morphindex.pdf", ancova_plot2, width = 10, height = 6) # I'm saving the second ANCOVA plot.
 
 # I'm saving all my ANCOVA results to a comprehensive file.
-sink('trevally_ancova_results.txt') # I'm opening a file to save my ANCOVA analysis.
+sink('Assignment1_output/results/trevally_ancova_results.txt') # I'm opening a file to save my ANCOVA analysis.
 cat('Analysis of Covariance (ANCOVA) Results\n') # I'm creating a header for the file.
 cat('Giant Trevally (Caranx ignobilis) Intestinal Villi Morphology\n\n') # I'm adding study context.
 

@@ -13,17 +13,32 @@ This repository contains the complete Unit 1 assignment implementing 10 statisti
 
 ```
 BIO672_COMPSTAT/
-├── Unit_1/
+├── Assignment1_scripts/
 │   ├── Maximillian_unit1_BIOL672.r           # Main script (Steps 2-6)
 │   ├── trevally_multivariate_analysis.r      # Multivariate script (Steps 7-10)
+│   └── iris_code.py                          # Workshop Python script
+├── Assignment1_data/
 │   ├── Dataset.datatab                        # JSON ANOVA input data
 │   ├── trevally_multivariate_data.txt         # Giant Trevally morphology data
-│   ├── [25+ output files]                    # Generated results and plots
-│   └── README.md
-├── Week1Workshop/                             # Workshop materials
-├── desc.txt                                  # Descriptive statistics output
-├── histo.pdf                                 # Histogram plot
-└── random_numbers.txt                        # Generated random data
+│   ├── random_numbers.txt                     # Generated random numbers
+│   ├── Unit1assignments.pdf                   # Assignment instructions
+│   └── DATA_BIOMETRIC_*.{txt,xlsx}           # Original Giant Trevally dataset
+├── Assignment1_output/
+│   ├── plots/                                # All PDF visualizations
+│   │   ├── histo.pdf                         # Random data histogram
+│   │   ├── anova_plot.pdf                    # ANOVA error bar chart
+│   │   ├── correlation_scatterplots.pdf      # Correlation plots
+│   │   ├── linear_regression_plot.pdf        # Regression visualization
+│   │   ├── trevally_*.pdf                    # Multivariate analysis plots
+│   │   └── [8+ additional plots]
+│   └── results/                              # All text output files
+│       ├── desc.txt                          # Descriptive statistics
+│       ├── anova_results.txt                 # ANOVA analysis
+│       ├── correlations.txt                  # Correlation analysis
+│       ├── trevally_*.txt                    # Multivariate results
+│       └── [8+ additional results]
+├── Week1Workshop/                             # Original workshop materials
+└── README.md                                 # This documentation
 ```
 
 ## 🔬 Script Descriptions
@@ -137,14 +152,14 @@ install.packages(c("ggplot2", "dplyr", "jsonlite", "corrplot", "tidyr"))
 
 ### Running the Scripts
 ```bash
-# Navigate to Unit_1 directory
-cd Unit_1/
+# Navigate to repository root
+cd BIO672_COMPSTAT/
 
 # Run main statistical analysis (Steps 2-6)
-Rscript Maximillian_unit1_BIOL672.r
+Rscript Assignment1_scripts/Maximillian_unit1_BIOL672.r
 
-# Run multivariate analysis (Steps 7-10)
-Rscript trevally_multivariate_analysis.r
+# Run multivariate analysis (Steps 7-10)  
+Rscript Assignment1_scripts/trevally_multivariate_analysis.r
 ```
 
 ## 📈 Key Results

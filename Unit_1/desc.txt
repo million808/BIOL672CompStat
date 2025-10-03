@@ -1,2 +1,0 @@
-Sample Mean: 0.0002191254 
-Sample SD: 0.9888567 
