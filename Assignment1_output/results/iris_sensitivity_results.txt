@@ -1,0 +1,11 @@
+IRIS DATASET SENSITIVITY ANALYSIS RESULTS\nMethod Tested: MANOVA (Multivariate Analysis of Variance)\nChosen because: MANOVA tests species differences across multiple correlated\nmorphological variables simultaneously, making it ideal for iris data.\n\n                              Dataset   N Species_Groups Wilks_Lambda
+original                Original Iris 150              3       0.0235
+no_setosa No Setosa (Removed Species) 100              2       0.2161
+missing                  Missing Data 150              3       0.0235
+misclass        Misclassified Species 150              3       0.2098
+          F_Statistic   P_Value Significant
+original       198.71 1.78e-112        TRUE
+no_setosa       86.15  9.54e-31        TRUE
+missing        183.78  1.1e-103        TRUE
+misclass        42.59  1.25e-44        TRUE
+\nSENSITIVITY ANALYSIS:\n1. Species Removal: Removing setosa species maintains significance\n2. Missing Data: Reduces effect size but preserves significance\n3. Misclassification: Most sensitive to incorrect species labels\n\nConclusion: MANOVA handles moderate data problems well but\nsensitive to systematic classification errors.\n

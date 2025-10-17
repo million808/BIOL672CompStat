@@ -1,2 +1,2 @@
-Sample Mean: 0.0142038 
-Sample SD: 1.019036 
+Sample Mean: 0.006818757 
+Sample SD: 0.9931255 

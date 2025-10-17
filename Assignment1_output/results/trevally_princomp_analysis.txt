@@ -1,0 +1,49 @@
+PRINCIPAL COMPONENTS ANALYSIS RESULTS
+Giant Trevally Intestinal Villi Morphology
+
+PCA Summary:
+Importance of components:
+                          Comp.1    Comp.2    Comp.3     Comp.4
+Standard deviation     1.7082907 0.9080554 0.3979126 0.31439461
+Proportion of Variance 0.7295643 0.2061412 0.0395836 0.02471099
+Cumulative Proportion  0.7295643 0.9357054 0.9752890 1.00000000
+
+PCA Loadings (Component Coefficients):
+
+Loadings:
+                 Comp.1 Comp.2 Comp.3 Comp.4
+Avg_Length_Villi  0.512  0.459  0.373  0.623
+Avg_Width_Villi  -0.539  0.250  0.777 -0.206
+Length_SD         0.529  0.395        -0.750
+Width_SD         -0.409  0.755 -0.505       
+
+               Comp.1 Comp.2 Comp.3 Comp.4
+SS loadings      1.00   1.00   1.00   1.00
+Proportion Var   0.25   0.25   0.25   0.25
+Cumulative Var   0.25   0.50   0.75   1.00
+
+Standard Deviations of Components:
+   Comp.1    Comp.2    Comp.3    Comp.4 
+1.7082907 0.9080554 0.3979126 0.3143946 
+
+Variance Explained by Each Component:
+PC 1 : 72.96 % (Cumulative: 72.96 %)
+PC 2 : 20.61 % (Cumulative: 93.57 %)
+PC 3 : 3.96 % (Cumulative: 97.53 %)
+PC 4 : 2.47 % (Cumulative: 100 %)
+
+INTERPRETATION OF PCA RESULTS:
+
+1. DATA REDUCTION SUCCESS:
+PC1 explains 73 % of total variance
+PC1 + PC2 together explain 93.6 % of total variance
+Data reduction is SUCCESSFUL - first two PCs capture most variation
+
+2. LOADINGS INTERPRETATION:
+PC1 loadings: 0.512, -0.539, 0.529, -0.409 
+PC2 loadings: 0.459, 0.25, 0.395, 0.755 
+PC2 represents OVERALL SIZE variation (all positive loadings)
+
+3. VARIABLE-SPECIFIC CONTRIBUTIONS:
+PC1 is most strongly driven by: Avg_Width_Villi (loading = 0.539 )
+PC2 is most strongly driven by: Width_SD (loading = 0.755 )

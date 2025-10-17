@@ -238,7 +238,7 @@ if (is.null(found_input)) { # If I didn't find any file...
   narrative <- c(narrative, 'KS caveat: KS p-values are approximate because group mean/sd were estimated; ties may affect validity.') # I add KS caveat.
   narrative <- c(narrative, '') # Blank line.
   narrative <- c(narrative, 'Interpretation:') # Interpretation header.
-  if (param_sig && nonparam_sig) { # If both tests are significant...
+  if (param_sig && nonparam_sig) { # If both tests are significant
     narrative <- c(narrative, "Both tests found differences between groups, and since they agree, I am more confident the difference is real.") # I add my interpretation.
   } else if (!param_sig && !nonparam_sig) { # If neither test is significant...
     narrative <- c(narrative, "Neither test found differences between groups, so I see no evidence of group effects.") # I add my interpretation.
@@ -281,7 +281,7 @@ if (lm_summary$coefficients[2,4] < 0.05) { # If the p-value for the slope is les
 }
 sink() # I stop writing to the file.
 
-# I print a verbal interpretation to the console so it's easy to read.
+# I am printing my interpretation of the results
 cat('\n--- Linear Regression Interpretation ---\n') # I print a header for my interpretation.
 cat('I ran a simple linear regression to see if blood pressure changes as group number increases.\n')
 cat('The regression slope tells me how much blood pressure goes up or down for each step in group number.\n')
