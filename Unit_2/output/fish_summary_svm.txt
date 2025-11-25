@@ -1,0 +1,8 @@
+                   species         length          weight       w_l_ratio     
+ Setipinna taty        : 480   Min.   : 6.36   Min.   :2.05   Min.   :0.0800  
+ Anabas testudineus    : 476   1st Qu.:11.33   1st Qu.:3.07   1st Qu.:0.1700  
+ Pethia conchonius     : 475   Median :17.35   Median :3.31   Median :0.1900  
+ Otolithoides biauritus: 468   Mean   :17.35   Mean   :3.74   Mean   :0.2528  
+ Polynemus paradiseus  : 458   3rd Qu.:22.59   3rd Qu.:4.10   3rd Qu.:0.3400  
+ Sillaginopsis panijus : 455   Max.   :33.86   Max.   :6.29   Max.   :0.6400  
+ (Other)               :1268                                                  

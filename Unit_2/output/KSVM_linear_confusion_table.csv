@@ -1,0 +1,10 @@
+model,true,Anabas testudineus,Coilia dussumieri,Otolithoides biauritus,Otolithoides pama,Pethia conchonius,Polynemus paradiseus,Puntius lateristriga,Setipinna taty,Sillaginopsis panijus
+KSVM_linear,Anabas testudineus,142,0,0,0,0,0,0,0,0
+KSVM_linear,Coilia dussumieri,0,124,0,0,0,0,0,0,0
+KSVM_linear,Otolithoides biauritus,0,0,105,0,0,0,0,35,0
+KSVM_linear,Otolithoides pama,0,0,1,129,0,0,0,0,0
+KSVM_linear,Pethia conchonius,0,0,0,0,142,0,0,0,0
+KSVM_linear,Polynemus paradiseus,0,0,0,0,0,137,0,0,0
+KSVM_linear,Puntius lateristriga,0,0,0,0,0,0,125,0,0
+KSVM_linear,Setipinna taty,0,0,39,0,0,0,0,105,0
+KSVM_linear,Sillaginopsis panijus,0,0,0,0,0,0,0,0,136

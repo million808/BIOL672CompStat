@@ -576,12 +576,12 @@ for (i in seq_along(variance_explained)) { # I loop through each principal compo
 
 cat("\nINTERPRETATION OF PCA RESULTS:\n") # I add a section for interpretation.
 cat("\n1. DATA REDUCTION SUCCESS:\n") # I start analyzing how successful the data reduction was.
-cat("PC1 explains", round(variance_explained[1], 1), "% of total variance\n") # I report PC1's contribution.
+cat("PC1 explains", round(variance_explained[1], 1), "% of total variance\n") # I report PC1's actual contribution.
 cat("PC1 + PC2 together explain", round(cumulative_variance[2], 1), "% of total variance\n") # I report cumulative variance of first two PCs.
 if (cumulative_variance[2] > 70) { # I check if first two PCs explain most of the variance.
-  cat("Data reduction is SUCCESSFUL - first two PCs capture most variation\n") # I conclude that reduction worked well.
+  cat("Data reduction is successful - first two PCs capture most variation\n") # I say that reduction worked well.
 } else {
-  cat("Data reduction is MODERATE - may need more PCs to capture variation\n") # I conclude that reduction was only partially successful.
+  cat("Data reduction is alright - may need more PCs to capture variation\n") # I say that reduction was only partially successful.
 }
 
 cat("\n2. LOADINGS INTERPRETATION:\n") # I add a section for interpreting loadings.
@@ -748,7 +748,7 @@ cluster_plot <- ggplot(plot_data, aes(x = Avg_Length_Villi, y = Avg_Width_Villi,
              color = "black", size = 5, shape = 4, stroke = 2) + # I make centers black X's.
   labs(title = "K-means Clustering Results", # I add a title.
        subtitle = paste("k =", k_clusters, "clusters identified"), # I add a subtitle with k value.
-       x = "Average Length of Villi (micrometers)", # I label the x-axis.
+       x = "Average Length of Villi (micrometers)", # I label the x-axis
        y = "Average Width of Villi (micrometers)", # I label the y-axis.
        color = "Cluster") + # I label the color legend.
   theme_minimal() # I use a clean theme.
@@ -761,8 +761,8 @@ cat("Cluster sizes:", table(kmeans_result$cluster), "\n") # I report how many ob
 cat("Within-cluster sum of squares:", round(kmeans_result$tot.withinss, 2), "\n") # I report the total within-cluster variation.
 cat("Between-cluster sum of squares:", round(kmeans_result$betweenss, 2), "\n") # I report the between-cluster variation.
 cat("Total sum of squares:", round(kmeans_result$totss, 2), "\n") # I report the total variation.
-cat("Variance explained by clustering:", round(kmeans_result$betweenss / kmeans_result$totss * 100, 1), "%\n") # I calculate how much variance the clusters explain.
+cat("Variance explained by the clustering:", round(kmeans_result$betweenss / kmeans_result$totss * 100, 1), "%\n") # I calculate how much variance the clusters explain.
 
-cat("\nThis comprehensive analysis examines morphological variation in Giant Trevally intestinal villi\n") # I provide a brief description of what this analysis accomplished.
-cat("across different treatment groups using advanced multivariate statistical methods including MANOVA,\n") # I explain the scope of the multivariate analysis.
-cat("multiple regression, ANCOVA, PCA, factor analysis, and k-means clustering.\n") # I list all the methods I used.
+cat("\nThis analysis examines morphological variation in Giant Trevally intestinal villi\n") # This is what I said
+cat("across different treatment groups using advanced multivariate statistical methods including MANOVA,\n") # I explaind the range of the multivariate analysis.
+cat("multiple regression, ANCOVA, PCA, factor analysis, and k-means clustering.\n") 

@@ -1,0 +1,10 @@
+,model,Anabas testudineus,Coilia dussumieri,Otolithoides biauritus,Otolithoides pama,Pethia conchonius,Polynemus paradiseus,Puntius lateristriga,Setipinna taty,Sillaginopsis panijus
+Anabas testudineus,MLP,143,0,0,0,0,0,0,0,0
+Coilia dussumieri,MLP,0,124,0,1,0,0,0,0,0
+Otolithoides biauritus,MLP,0,0,87,1,0,0,0,52,0
+Otolithoides pama,MLP,0,0,1,130,0,0,0,0,0
+Pethia conchonius,MLP,0,0,0,0,143,0,0,0,0
+Polynemus paradiseus,MLP,0,0,0,0,1,136,0,0,0
+Puntius lateristriga,MLP,0,0,0,0,0,0,125,0,0
+Setipinna taty,MLP,0,0,33,0,0,0,0,111,0
+Sillaginopsis panijus,MLP,0,0,0,0,0,0,0,0,136

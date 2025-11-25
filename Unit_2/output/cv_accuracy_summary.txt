@@ -1,0 +1,7 @@
+# A tibble: 4 × 3
+  method     mean_accuracy sd_accuracy
+  <chr>              <dbl>       <dbl>
+1 KNN                0.938     0.00336
+2 LDA                0.924     0.0109 
+3 NaiveBayes         0.928     0.0103 
+4 QDA                0.941     0.00735

@@ -1,0 +1,7 @@
+# A tibble: 4 × 3
+  method     mean_accuracy sd_accuracy
+  <chr>              <dbl>       <dbl>
+1 ksvm_rbf           0.936     0.00720
+2 svm_linear         0.930     0.00778
+3 svm_poly           0.936     0.00599
+4 svm_rbf            0.926     0.00603

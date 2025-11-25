@@ -1,0 +1,9 @@
+# A tibble: 6 × 3
+  method          mean_accuracy sd_accuracy
+  <chr>                   <dbl>       <dbl>
+1 KSVM_linear             0.931     0.0100 
+2 KSVM_polynomial         0.931     0.0100 
+3 KSVM_radial             0.937     0.00826
+4 SVM_linear              0.931     0.0100 
+5 SVM_polynomial          0.920     0.00907
+6 SVM_radial              0.930     0.0104 

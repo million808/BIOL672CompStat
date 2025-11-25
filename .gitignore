@@ -1,0 +1,14 @@
+# Ignore Python virtual environments
+Unit_2/.venv_script3/
+
+# macOS metadata
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# R data/workspace
+.Rhistory
+.RData
+.Rproj.user/

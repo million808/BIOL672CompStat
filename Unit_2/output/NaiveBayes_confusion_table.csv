@@ -1,0 +1,10 @@
+model,true,Anabas testudineus,Coilia dussumieri,Otolithoides biauritus,Otolithoides pama,Pethia conchonius,Polynemus paradiseus,Puntius lateristriga,Setipinna taty,Sillaginopsis panijus
+NaiveBayes,Anabas testudineus,142,0,0,0,0,0,0,0,0
+NaiveBayes,Coilia dussumieri,0,124,0,0,0,0,0,0,0
+NaiveBayes,Otolithoides biauritus,0,0,98,0,0,0,0,42,0
+NaiveBayes,Otolithoides pama,0,0,0,130,0,0,0,0,0
+NaiveBayes,Pethia conchonius,0,0,0,0,142,0,0,0,0
+NaiveBayes,Polynemus paradiseus,0,0,0,0,0,137,0,0,0
+NaiveBayes,Puntius lateristriga,0,0,0,0,0,0,125,0,0
+NaiveBayes,Setipinna taty,0,0,31,0,0,0,0,113,0
+NaiveBayes,Sillaginopsis panijus,0,0,0,0,0,0,0,0,136
